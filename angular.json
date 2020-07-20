@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/theme.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -92,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "flex-layout"
+    }
+  },
+  "defaultProject": "flex-layout",
+  "cli": {
+    "analytics": "372111cd-519f-4bbd-8230-55f003febbd4"
+  }
 }
