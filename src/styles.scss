@@ -4,7 +4,28 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 // @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+$background-color: #1E2124;
+$grey-color: #7D8A99;
+$orange-color: #FD7014;
+
 .logo {
     padding: 0px, 5px;
     font-size: large;
+}
+
+.bg-color {
+    background-color: $background-color;
+}
+
+.grey-color {
+    color: $grey-color;
+}
+
+.orange-color {
+    color: $orange-color;
+}
+
+.nav-text {
+    font-size: medium;
+    color: $grey-color;
 }
