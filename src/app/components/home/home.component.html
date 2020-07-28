@@ -1,0 +1,28 @@
+<!-- <div *ngIf="!deviceXs" class="bg-image" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+    <div>
+        <app-card [styling]="styling.red_sm"></app-card>
+        <app-card [styling]="styling.red_sm"></app-card>
+    </div>
+    <div>
+        <app-card [styling]="styling.orange_sm"></app-card>
+        <app-card [styling]="styling.orange_sm"></app-card>
+    </div>
+    <div>
+        <app-card [styling]="styling.green_sm"></app-card>
+        <app-card [styling]="styling.green_sm"></app-card>
+    </div>
+</div> -->
+
+<div style="height: 80%; margin-top: 20px;" class="bg-image" fxLayout="row wrap" fxLayoutAlign="space-around stretch" *ngIf="statewiseData.length != 0">
+        <app-card fxFlex.gt-md="30" fxFlexOrder="1" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="confirmedObj"></app-card>
+        <app-card fxFlex.gt-md="30" fxFlexOrder="2" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="recoveredObj"></app-card>
+        <app-card fxFlex.gt-md="30" fxFlexOrder="3" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="deathsObj"></app-card>
+        <app-card fxFlex.gt-md="30" fxFlexOrder="4" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="deltaConfirmedObj"></app-card>
+        <app-card fxFlex.gt-md="30" fxFlexOrder="5" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="deltaRecoveredObj"></app-card>
+        <app-card fxFlex.gt-md="30" fxFlexOrder="6" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="deltaDeathsObj"></app-card>
+</div>
+
+<!-- <div style="height: 85%;" class="bg-image" fxLayout="row" fxLayoutWrap  style="padding-bottom: 15px; 
+padding-top: 15px;  margin: auto;justify-content: center">
+
+</div> -->
