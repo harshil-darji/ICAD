@@ -1,0 +1,20 @@
+// .footer-class {
+//     position: relative;
+//     // margin-top: 1%;
+//     height: 4%;
+//     width: 100%;
+//     bottom: 0;
+// }
+:host {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+button {
+    margin-right: 40px;
+}

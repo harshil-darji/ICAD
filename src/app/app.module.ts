@@ -1,29 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
 import { CoreModule } from './core/core.module';
-import { FooterComponent } from './components/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './components/home/home.component';
 import { DataService } from './services/api/data.service';
 import { HttpClientModule } from '@angular/common/http';
-import { CardComponent } from './components/card/card.component';
+import { HomeModule } from './layouts/home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
-    CardComponent,
   ],
   imports: [
     BrowserModule,
     CoreModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -15,42 +15,10 @@ export class HomeComponent implements OnInit {
   deviceXs: boolean;
   data:any;
   mediaSub: Subscription;
-
-  // styling: any = {
-  //   "red": {
-  //     "height": "188px",
-  //     "width": "350px",
-  //     "border-color": "#FF3D00"
-  //   },
-  //   "orange" : {
-  //     "height": "188px",
-  //     "width": "350px",
-  //     "border-color": "#FD7014"
-  //   },
-  //   "green" : {
-  //     "height": "188px",
-  //     "width": "350px",
-  //     "border-color": "#5FFD14"
-  //   },
-  //   "red_sm": {
-  //     "height": "84px",
-  //     "width": "170px",
-  //     "border-color": "#FF3D00"
-  //   },
-  //   "orange_sm" : {
-  //     "height": "84px",
-  //     "width": "170px",
-  //     "border-color": "#FD7014"
-  //   },
-  //   "green_sm" : {
-  //     "height": "84px",
-  //     "width": "170px",
-  //     "border-color": "#5FFD14"
-  //   }
-  // } 
-  
   statewiseData: State[] = [];
+  showPageOne: boolean = true;
 
+  // Page 1 objects
   confirmedObj;
   deltaConfirmedObj;
   recoveredObj;
@@ -58,14 +26,18 @@ export class HomeComponent implements OnInit {
   deathsObj;
   deltaDeathsObj;
 
-  numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+  // Page 2 objects
+  testedObj;
+  deltaTestedObj;
+  activeObj;
+  activeRatioObj;
+  otherObj;
+  fatalityRatioObj;
 
   ngOnInit(): void {
     this.mediaSub = this.mediaObserver.media$.subscribe((result: MediaChange) => {
-      console.log(result.mqAlias);
-      ( (this.deviceXs = result.mqAlias === 'lg') || (this.deviceXs = result.mqAlias === 'xl') ) ? true : false;
+      // console.log(result.mqAlias);
+      ( (this.deviceXs = result.mqAlias === 'sm') || (this.deviceXs = result.mqAlias === 'xs') ) ? true : false;
     })
     this.dataService.getStatewiseData()
     .subscribe((data:any) => {
@@ -73,6 +45,7 @@ export class HomeComponent implements OnInit {
         this.statewiseData.push(stateData);
       });
       
+      // For page 1
       this.confirmedObj = {
         "title": "Confirmed cases",
         "count": this.numberWithCommas(this.statewiseData[0].confirmed),
@@ -104,9 +77,45 @@ export class HomeComponent implements OnInit {
         "style": {"border-color": "#7D8B9A"}
       }
 
+      // For page 2
+      this.testedObj = {
+        "title": "Tested",
+        "count": this.numberWithCommas(this.statewiseData[0].confirmed),
+        "style": {"border-color": "#FF3D00"}
+      }
+      this.testedObj = {
+        "title": "Confirmed cases increase",
+        "count": this.numberWithCommas(this.statewiseData[0].deltaconfirmed),
+        "style": {"border-color": "#FF3D00"}
+      }
+      this.activeObj = {
+        "title": "Recovered cases",
+        "count": this.numberWithCommas(this.statewiseData[0].recovered),
+        "style": {"border-color": "#5FFD14"}
+      }
+      this.activeRatioObj = {
+        "title": "Recovered cases increase",
+        "count": this.numberWithCommas(this.statewiseData[0].deltarecovered),
+        "style": {"border-color": "#5FFD14"}
+      }
+      this.otherObj = {
+        "title": "Deceased cases",
+        "count": this.numberWithCommas(this.statewiseData[0].deaths),
+        "style": {"border-color": "#7D8B9A"}
+      }
+      this.fatalityRatioObj = {
+        "title": "Deceased cases increase",
+        "count": this.numberWithCommas(this.statewiseData[0].deltadeaths),
+        "style": {"border-color": "#7D8B9A"}
+      }
+      
       console.log(this.statewiseData);
     }, (error:any) => {
       console.log(error);
     })
+  }
+
+  numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 }

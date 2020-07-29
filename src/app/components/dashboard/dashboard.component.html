@@ -1,0 +1,16 @@
+<div style="margin-top: 20px;" class="bg-image" fxLayout="row wrap" fxLayoutAlign="space-around stretch" *ngIf="statewiseData.length != 0">
+    <app-card *ngIf="showPageOne" fxFlex.gt-md="30" fxFlexOrder="1" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="confirmedObj"></app-card>
+    <app-card *ngIf="showPageOne" fxFlex.gt-md="30" fxFlexOrder="2" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="recoveredObj"></app-card>
+    <app-card *ngIf="showPageOne" fxFlex.gt-md="30" fxFlexOrder="3" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="deathsObj"></app-card>
+    <app-card *ngIf="showPageOne" fxFlex.gt-md="30" fxFlexOrder="4" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="deltaConfirmedObj"></app-card>
+    <app-card *ngIf="showPageOne" fxFlex.gt-md="30" fxFlexOrder="5" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="deltaRecoveredObj"></app-card>
+    <app-card *ngIf="showPageOne" fxFlex.gt-md="30" fxFlexOrder="6" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="deltaDeathsObj"></app-card>
+    <div fxFlexOrder="7" fxFlex="100" fxLayoutAlign="end" [fxHide.xs]="true" [fxHide.md]="true" [fxHide.sm]="true">
+        <button mat-fab>
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <button mat-fab>
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>    
+    </div>
+</div>
