@@ -16,6 +16,11 @@ export class DataService {
     return this.http.get(GlobalConstants.nationalURL).pipe(catchError(this.errorHandler));
   }
 
+  getMetricsData(): Observable<any>
+  {
+    return this.http.get(GlobalConstants.cumulativeLatestURL).pipe(catchError(this.errorHandler));
+  }
+
   errorHandler(error: HttpErrorResponse)
   {
     return observableThrowError(error || "Server Error");

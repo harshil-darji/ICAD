@@ -1,16 +1,39 @@
-<div style="margin-top: 20px;" class="bg-image" fxLayout="row wrap" fxLayoutAlign="space-around stretch" *ngIf="statewiseData.length != 0">
-    <app-card *ngIf="showPageOne" fxFlex.gt-md="30" fxFlexOrder="1" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="confirmedObj"></app-card>
-    <app-card *ngIf="showPageOne" fxFlex.gt-md="30" fxFlexOrder="2" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="recoveredObj"></app-card>
-    <app-card *ngIf="showPageOne" fxFlex.gt-md="30" fxFlexOrder="3" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="deathsObj"></app-card>
-    <app-card *ngIf="showPageOne" fxFlex.gt-md="30" fxFlexOrder="4" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="deltaConfirmedObj"></app-card>
-    <app-card *ngIf="showPageOne" fxFlex.gt-md="30" fxFlexOrder="5" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="deltaRecoveredObj"></app-card>
-    <app-card *ngIf="showPageOne" fxFlex.gt-md="30" fxFlexOrder="6" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100" [(data)]="deltaDeathsObj"></app-card>
-    <div fxFlexOrder="7" fxFlex="100" fxLayoutAlign="end" [fxHide.xs]="true" [fxHide.md]="true" [fxHide.sm]="true">
-        <button mat-fab>
-            <mat-icon>keyboard_arrow_left</mat-icon>
-        </button>
-        <button mat-fab>
-            <mat-icon>keyboard_arrow_right</mat-icon>
-        </button>    
-    </div>
+<div *ngIf="contentReady" class="bg-image">
+    <ngx-glide [(showArrows)]="showArrows" [(arrowLeftLabel)]="arrowLeftLabel" [(arrowRightLabel)]="arrowRightLabel"
+        [(perView)]="perView" [(autoplay)]="autoplay" style="margin-top: 20px; height: 90%;" fxLayout="column"
+        fxLayoutAlign="space-between center" *ngIf="totalStats && deltaStats">
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+            <app-card [@fadeInOut] fxFlex.gt-md="30" fxFlexOrder="1" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100"
+                [(data)]="confirmed"></app-card>
+            <app-card [@fadeInOut] fxFlex.gt-md="30" fxFlexOrder="2" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100"
+                [(data)]="recovered"></app-card>
+            <app-card [@fadeInOut] fxFlex.gt-md="30" fxFlexOrder="3" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100"
+                [(data)]="deaths"></app-card>
+            <app-card [@fadeInOut] fxFlex.gt-md="30" fxFlexOrder="4" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100"
+                [(data)]="deltaConfirmed"></app-card>
+            <app-card [@fadeInOut] fxFlex.gt-md="30" fxFlexOrder="5" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100"
+                [(data)]="deltaRecovered"></app-card>
+            <app-card [@fadeInOut] fxFlex.gt-md="30" fxFlexOrder="6" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100"
+                [(data)]="deltaDeaths"></app-card>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+            <app-card [@fadeInOut] fxFlex.gt-md="30" fxFlexOrder="1" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100"
+                [(data)]="confirmedPm"></app-card>
+            <app-card [@fadeInOut] fxFlex.gt-md="30" fxFlexOrder="2" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100"
+                [(data)]="recoveryRatio"></app-card>
+            <app-card [@fadeInOut] fxFlex.gt-md="30" fxFlexOrder="3" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100"
+                [(data)]="caseFatalityRatio"></app-card>
+            <app-card [@fadeInOut] fxFlex.gt-md="30" fxFlexOrder="4" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100"
+                [(data)]="activeRatio"></app-card>
+            <app-card [@fadeInOut] fxFlex.gt-md="30" fxFlexOrder="5" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100"
+                [(data)]="totalTestsPerformed"></app-card>
+            <app-card [@fadeInOut] fxFlex.gt-md="30" fxFlexOrder="6" fxFlex.md="30" fxFlex.sm="50" fxFlex.xs="100"
+                [(data)]="avgGrowthRate"></app-card>
+        </div>
+    </ngx-glide>
+</div>
+
+<div *ngIf="!contentReady" style="display: flex; justify-content: center; align-items: center;">
+    <mat-spinner></mat-spinner>
 </div>

@@ -1,18 +1,33 @@
-<!-- <mat-list><mat-divider style="border-top-color: #7D8A99;"></mat-divider></mat-list> -->
-<!-- <footer style="color: white; height: 200px; background-color: black;">
-    FOOTER WORKS
-</footer> -->
-<mat-list>
-    <mat-divider style="border-top-color: #7D8A99;"></mat-divider>
-</mat-list>
+<div *ngIf="!deviceXs">
+    <mat-list>
+        <mat-divider style="border-top-color: #7D8A99;"></mat-divider>
+    </mat-list>
+    
+    <div style="color: #7D8A99; background-color: 1E2124;" fxLayout="row" fxLayoutAlign="space-between center">
+        <h5 style="font-size: large; font-weight: bold; margin-left: 10px; margin-bottom: -1px;">India Covid Awareness Dashboard</h5>
+        <ul fxLayout="row" fxLayoutAlign="space-between end">
+            <li>
+                <button mat-icon-button><mat-icon svgIcon="facebook"></mat-icon></button>
+                <button mat-icon-button><mat-icon svgIcon="insta"></mat-icon></button>
+                <button mat-icon-button><mat-icon svgIcon="linkedin"></mat-icon></button>
+            </li>
+        </ul>
+    </div>
+</div>
 
-<div style="color: #7D8A99; background-color: 1E2124;" fxLayout="row" fxLayoutAlign="space-between center">
-    <h5 style="font-size: large; font-weight: bold; margin-left: 10px; margin-bottom: -1px;">India Covid Awareness Dashboard</h5>
-    <ul fxLayout="row" fxLayoutAlign="space-between end">
-        <li>
-            <button mat-icon-button><mat-icon svgIcon="facebook"></mat-icon></button>
-            <button mat-icon-button><mat-icon svgIcon="insta"></mat-icon></button>
-            <button mat-icon-button><mat-icon svgIcon="linkedin"></mat-icon></button>
-        </li>
-    </ul>
+<div *ngIf="deviceXs">
+    <mat-list>
+        <mat-divider style="border-top-color: #7D8A99;"></mat-divider>
+    </mat-list>
+
+    <div style="color: #7D8A99; background-color: 1E2124;" fxLayout="column" fxLayoutAlign="space-between center">
+        <h5 style="font-size: large; font-weight: bold; margin-bottom: -13px; margin-top: 8px;">India Covid Awareness Dashboard</h5>
+        <ul fxLayout="row" fxLayoutAlign="space-between center">
+            <li>
+                <button mat-icon-button><mat-icon svgIcon="facebook"></mat-icon></button>
+                <button mat-icon-button><mat-icon svgIcon="insta"></mat-icon></button>
+                <button mat-icon-button><mat-icon svgIcon="linkedin"></mat-icon></button>
+            </li>
+        </ul>
+    </div>
 </div>

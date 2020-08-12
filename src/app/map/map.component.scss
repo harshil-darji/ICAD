@@ -1,0 +1,40 @@
+$orange-color: #FD7014;
+$background-color: #1E2124;
+
+table {
+    width: 100%;
+    background-color: $background-color;
+    color: white;
+}
+
+th {
+    color: white;
+    font-weight: bold;
+    font-size: 1.3vmax;
+    border-bottom-color: white;
+}
+
+td{
+    font-size: 1.2vmax;
+    color: white;
+}
+
+mat-paginator {
+    background-color: $background-color;
+    color: $orange-color;
+}
+
+::ng-deep .mat-select-value {
+    color: $orange-color;
+    font-weight: bold;
+    font-size: medium;
+}
+
+::ng-deep .mat-select-arrow {
+    color: $orange-color;
+    font-size: medium;
+}
+
+::ng-deep .mat-option-text {
+    text-align: center;
+}

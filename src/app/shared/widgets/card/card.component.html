@@ -1,4 +1,6 @@
 <mat-card class="covid-card" [ngStyle]="data.style">
+    <mat-icon style="color: whitesmoke; float: right; opacity: 0.8;" #tooltip="matTooltip" matTooltipClass="tooltip" [matTooltip]="data.description"
+     matTooltipHideDelay="400">info</mat-icon>
     <div fxLayout="column" fxLayoutAlign="center center" style="height: 120px;">
         <h1 style="color: white; font-weight: bold;">{{data.count}}</h1>
         <h1 style="color: #7D8A99;">{{data.title}}</h1>

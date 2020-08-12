@@ -9,6 +9,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [],
@@ -21,7 +25,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatDividerModule,
     MatListModule,
     MatCardModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTooltipModule,
+    MatProgressSpinnerModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class CoreModule { }

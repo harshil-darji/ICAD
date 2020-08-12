@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './widgets/card/card.component';
 import { CoreModule } from '../core/core.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { CoreModule } from '../core/core.module';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     CoreModule
   ],
   exports: [

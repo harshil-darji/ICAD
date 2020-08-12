@@ -10,6 +10,9 @@ body {
 }
 // @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+@import '~@glidejs/glide/src/assets/sass/glide.core';
+@import '~@glidejs/glide/src/assets/sass/glide.theme';
+
 $background-color: #1E2124;
 $grey-color: #7D8A99;
 $orange-color: #FD7014;
@@ -39,4 +42,9 @@ $orange-color: #FD7014;
 .nav-text {
     font-size: medium;
     color: $grey-color;
+}
+
+.mat-tooltip.tooltip {
+    background-color: black;
+    font-size: small;
 }
