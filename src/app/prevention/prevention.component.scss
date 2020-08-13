@@ -1,0 +1,39 @@
+$orange-color: #FD7014;
+$background-color: #1E2124;
+$grey-color: #7D8A99;
+.black-cards{
+    mat-card {
+        background-color: black;
+        border-radius: 20%;
+        width: 30%;
+        margin: 2%;
+    }
+    p {
+        font-size: medium;
+        color: $grey-color;
+        margin: 8% 2% 8%;
+    }
+}
+
+h3 {
+    font-size: 1.5vmax;
+    line-height: 110%;
+    color: white;
+}
+
+img {
+    width: 35%;
+    height: auto;
+    margin: 10% 2% 10%;
+}
+
+.text-cards {
+    mat-card{
+        background-color: $background-color;
+        font-size: 1.1vmax;
+        line-height: 110%;;
+        color: $grey-color;
+        box-shadow: none !important;
+        margin: 4%;    
+    }
+}
